@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a5ff40868c64e94384a5e1cf3367d34, type: 3}
+  m_Name: PlayerSO
+  m_EditorClassIdentifier: 
+  Damage: 3.7
+  Tears: 2.73
+  Range: 20
+  ShotSpeed: 0.8
+  Speed: 1.4
+  Heart: 3
+  SoulHeart: 0
+  TearsPrefeb: {fileID: 2604179239433607639, guid: 13d82bcdc8bea48478a228fa6a64d620, type: 3}
