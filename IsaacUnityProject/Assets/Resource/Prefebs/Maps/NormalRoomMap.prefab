@@ -3814,7 +3814,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1135149108146166201}
   - component: {fileID: 7618780162765715760}
-  m_Layer: 0
+  - component: {fileID: 3721913468792805}
+  m_Layer: 6
   m_Name: NormalRoomMap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3853,6 +3854,56 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!60 &3721913468792805
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4171966894280038558}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -9.402138, y: 8.749014}
+      - {x: -9.491514, y: -4.766224}
+      - {x: -0.9870669, y: -4.8351083}
+      - {x: 9.471804, y: -4.835108}
+      - {x: 9.524299, y: 8.750942}
+  m_UseDelaunayMesh: 0
 --- !u!1 &4405127877135800194
 GameObject:
   m_ObjectHideFlags: 0
@@ -4142,7 +4193,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 6
-      m_TileSpriteIndex: 6
+      m_TileSpriteIndex: 12
       m_TileMatrixIndex: 2
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -4272,7 +4323,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 7
-      m_TileSpriteIndex: 7
+      m_TileSpriteIndex: 11
       m_TileMatrixIndex: 3
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -4522,7 +4573,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 4
-      m_TileSpriteIndex: 4
+      m_TileSpriteIndex: 10
       m_TileMatrixIndex: 1
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -4652,7 +4703,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 5
-      m_TileSpriteIndex: 5
+      m_TileSpriteIndex: 9
       m_TileMatrixIndex: 1
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -4815,24 +4866,24 @@ Tilemap:
     m_Data: {fileID: -319358336, guid: a5c3d9a891eddc2429ce3ca51731f0aa, type: 3}
   - m_RefCount: 8
     m_Data: {fileID: 467474626, guid: a5c3d9a891eddc2429ce3ca51731f0aa, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: -484373128, guid: a5c3d9a891eddc2429ce3ca51731f0aa, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 1672434120, guid: a5c3d9a891eddc2429ce3ca51731f0aa, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: -698293264, guid: a5c3d9a891eddc2429ce3ca51731f0aa, type: 3}
+    m_Data: {fileID: -484373128, guid: a5c3d9a891eddc2429ce3ca51731f0aa, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 2129433302, guid: a5c3d9a891eddc2429ce3ca51731f0aa, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: -698293264, guid: a5c3d9a891eddc2429ce3ca51731f0aa, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 24
     m_Data:
@@ -5913,7 +5964,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0.0625, y: 0, z: 0}
   m_MaxChunkCount: 16
