@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.0.3 Chrome/140.0.7339.249 Electron/38.7.0 Safari/537.36" version="29.0.3">
   <diagram name="페이지-1" id="dYi9hIv6HUheR36FEGcu">
-    <mxGraphModel dx="872" dy="474" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1038" dy="830" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -19,7 +19,7 @@
         <mxCell id="WMVJfzzcOASaFt1d6HGQ-5" value="빅 룸&lt;div&gt;24x16&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="130" y="120" width="90" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="WMVJfzzcOASaFt1d6HGQ-7" value="세로 룸&lt;div&gt;7x8&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="WMVJfzzcOASaFt1d6HGQ-7" value="세로 룸&lt;div&gt;6x8&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="30" y="170" width="90" height="40" as="geometry" />
         </mxCell>
         <mxCell id="WMVJfzzcOASaFt1d6HGQ-9" value="가로 룸&lt;div&gt;14x4&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
