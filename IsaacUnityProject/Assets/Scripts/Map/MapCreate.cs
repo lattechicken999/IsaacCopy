@@ -39,6 +39,7 @@ public class MapCreate
         {
             CreateNewRoom();
         }
+        _rooms[_rooms.Count - 1].SetBossRoom();
         return _rooms;
     }
 
@@ -80,6 +81,7 @@ public class MapCreate
             _roomQueue.Enqueue(newNode);
             _rooms.Add(newNode);
             _mapLayout[x, y] = _rooms.Count;
+            node._doors[(int)roomDir] = newNode.LinkDoor(node, ReverseDir(roomDir));
             DecreaseCount(type);
         }
     }
@@ -143,21 +145,26 @@ public class MapCreate
         if (_mapLayout[x, y] != 0)
         {
             //이미 있는 자리라면 서로 연결시켜줌
-            DoorDirection targetDir;
-            if (dir == DoorDirection.Up) targetDir = DoorDirection.Down;
-            else if (dir == DoorDirection.Down) targetDir = DoorDirection.Up;
-            else if (dir == DoorDirection.Left) targetDir = DoorDirection.Right;
-            else targetDir = DoorDirection.Left;
+            
 
-            node._doors[(int)dir] = _rooms[_mapLayout[x, y]-1].LinkDoor(node, targetDir);
+            node._doors[(int)dir] = _rooms[_mapLayout[x, y]-1].LinkDoor(node, ReverseDir(dir));
             return false;
         }
         return true;
     }
+    private DoorDirection ReverseDir(DoorDirection dir)
+    {
+        DoorDirection targetDir;
+        if (dir == DoorDirection.Up) targetDir = DoorDirection.Down;
+        else if (dir == DoorDirection.Down) targetDir = DoorDirection.Up;
+        else if (dir == DoorDirection.Left) targetDir = DoorDirection.Right;
+        else targetDir = DoorDirection.Left;
+        return targetDir;
+    }
     private void MoveIndex(ref int x, ref int y,DoorDirection dir)
     {
-        if (dir == DoorDirection.Up) y--;
-        if (dir == DoorDirection.Down) y++;
+        if (dir == DoorDirection.Up) y++;
+        if (dir == DoorDirection.Down) y--;
         if (dir == DoorDirection.Left) x--;
         if (dir == DoorDirection.Right) x++;
     }

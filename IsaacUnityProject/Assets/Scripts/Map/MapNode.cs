@@ -20,9 +20,15 @@ public class MapNode
     public int MapXIndex { private set; get; }
     public int MapYIndex{private set; get;}
 
+    public bool BossRoom { private set; get; }
+
     public Rooms RoomType
     { private set; get; }
 
+    public void SetBossRoom()
+    {
+        BossRoom = true;
+    }
     public int NodeIndex
     {
         private set; get;
