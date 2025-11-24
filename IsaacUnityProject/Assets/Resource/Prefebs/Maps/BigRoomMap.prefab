@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 8954569805031093549}
   - component: {fileID: 6021545219565341284}
   - component: {fileID: 5954624725678462978}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BottomDoor_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -383,7 +383,7 @@ GameObject:
   - component: {fileID: 9063692986486925117}
   - component: {fileID: 7025040267100264025}
   - component: {fileID: 3280508391341299394}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: WallMap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2263,7 +2263,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7758170540376121087}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: NoDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2473,7 +2473,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 017bcddb67b0b3f49ae5b1323e19ca86, type: 2}
-  m_Color: {r: 0.1254902, g: 0.18039216, b: 0.21568629, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -9343,7 +9343,7 @@ GameObject:
   - component: {fileID: 7898991555011311810}
   - component: {fileID: 6778184929049665746}
   - component: {fileID: 7538212769697303745}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LeftDoor_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9627,7 +9627,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 017bcddb67b0b3f49ae5b1323e19ca86, type: 2}
-  m_Color: {r: 0.1254902, g: 0.18039216, b: 0.21568629, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -9711,7 +9711,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 017bcddb67b0b3f49ae5b1323e19ca86, type: 2}
-  m_Color: {r: 0.1254902, g: 0.18039216, b: 0.21568629, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -9735,7 +9735,7 @@ GameObject:
   - component: {fileID: 4528932432275973976}
   - component: {fileID: 1720221776250723055}
   - component: {fileID: 3215681056267253154}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RightDoor_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9957,7 +9957,7 @@ GameObject:
   - component: {fileID: 2992523355125110382}
   - component: {fileID: 5796384566952267824}
   - component: {fileID: 3684408804394432965}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: top_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10329,7 +10329,7 @@ GameObject:
   - component: {fileID: 1827862240666721795}
   - component: {fileID: 1910989736906162491}
   - component: {fileID: 1842391912342912654}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BottomDoor_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10628,7 +10628,7 @@ GameObject:
   - component: {fileID: 4304111628780371426}
   - component: {fileID: 3397421320648414877}
   - component: {fileID: 4105389026482476161}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ObstacleTileMap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11274,7 +11274,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 017bcddb67b0b3f49ae5b1323e19ca86, type: 2}
-  m_Color: {r: 0.1254902, g: 0.18039216, b: 0.21568629, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -11358,7 +11358,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 017bcddb67b0b3f49ae5b1323e19ca86, type: 2}
-  m_Color: {r: 0.1254902, g: 0.18039216, b: 0.21568629, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -12498,7 +12498,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 017bcddb67b0b3f49ae5b1323e19ca86, type: 2}
-  m_Color: {r: 0.1254902, g: 0.18039216, b: 0.21568629, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -12522,7 +12522,7 @@ GameObject:
   - component: {fileID: 2600588448689668749}
   - component: {fileID: 3188127549558212496}
   - component: {fileID: 4491223473711174919}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LeftDoor_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12852,7 +12852,7 @@ GameObject:
   - component: {fileID: 7614444505441520443}
   - component: {fileID: 847138448016595369}
   - component: {fileID: 2962223268463682298}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TopDoor_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13105,7 +13105,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 017bcddb67b0b3f49ae5b1323e19ca86, type: 2}
-  m_Color: {r: 0.1254902, g: 0.18039216, b: 0.21568629, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -13127,7 +13127,7 @@ GameObject:
   - component: {fileID: 1612281515713751876}
   - component: {fileID: 8125785204040410280}
   - component: {fileID: 6158659492833575370}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: left_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13453,7 +13453,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 017bcddb67b0b3f49ae5b1323e19ca86, type: 2}
-  m_Color: {r: 0.1254902, g: 0.18039216, b: 0.21568629, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -13475,7 +13475,7 @@ GameObject:
   - component: {fileID: 3936579937131980869}
   - component: {fileID: 6310833925675873140}
   - component: {fileID: 7502190861493592552}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bottom_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13635,7 +13635,7 @@ GameObject:
   - component: {fileID: 6252645208937517020}
   - component: {fileID: 8558439926105278669}
   - component: {fileID: 9029135194832323215}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TopDoor_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14038,7 +14038,7 @@ GameObject:
   - component: {fileID: 7963615939770507710}
   - component: {fileID: 5159262743549933481}
   - component: {fileID: 2969885193093654167}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: right_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14302,7 +14302,7 @@ GameObject:
   - component: {fileID: 4824418745614478406}
   - component: {fileID: 619001501810460232}
   - component: {fileID: 8986492048251162666}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: right_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14566,7 +14566,7 @@ GameObject:
   - component: {fileID: 1247396191382012456}
   - component: {fileID: 9147035843692790855}
   - component: {fileID: 4114694682355527679}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: left_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14724,7 +14724,7 @@ GameObject:
   - component: {fileID: 4030239499560233013}
   - component: {fileID: 4163007191111254371}
   - component: {fileID: 2941199609775908856}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bottom_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14990,7 +14990,7 @@ GameObject:
   - component: {fileID: 7411814155810284583}
   - component: {fileID: 3038419071464219633}
   - component: {fileID: 2763363371761540001}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RightDoor_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15181,7 +15181,7 @@ GameObject:
   - component: {fileID: 9122547220000255952}
   - component: {fileID: 4370608034935353506}
   - component: {fileID: 6196952703239508510}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: top_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15444,7 +15444,7 @@ GameObject:
   - component: {fileID: 4282545009349443747}
   - component: {fileID: 999251292185172155}
   - component: {fileID: 5049387419436689187}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BigRoomMap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
