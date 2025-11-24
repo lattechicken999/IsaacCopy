@@ -340,7 +340,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4961617040895482189}
   m_Layer: 0
-  m_Name: Backgournd
+  m_Name: DoorBackgournd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -354,7 +354,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 357312625040203541}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -367,7 +367,7 @@ Transform:
   - {fileID: 472399351137748807}
   - {fileID: 3762008376903105952}
   - {fileID: 2578879002528455657}
-  m_Father: {fileID: 6502338455035011502}
+  m_Father: {fileID: 4282545009349443747}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &529633270231852573
 GameObject:
@@ -2278,7 +2278,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 759697060392385215}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2291,7 +2291,7 @@ Transform:
   - {fileID: 4443694759732312072}
   - {fileID: 4667802253233999868}
   - {fileID: 663210292901545910}
-  m_Father: {fileID: 6502338455035011502}
+  m_Father: {fileID: 4282545009349443747}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &811084871881803398
 GameObject:
@@ -11190,8 +11190,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4961617040895482189}
-  - {fileID: 7758170540376121087}
   - {fileID: 7886686660655434586}
   - {fileID: 2851880327260692179}
   - {fileID: 5414295658079170155}
@@ -15470,6 +15468,8 @@ Transform:
   - {fileID: 6086882489001435456}
   - {fileID: 6565190407062814787}
   - {fileID: 3648256610292639600}
+  - {fileID: 7758170540376121087}
+  - {fileID: 4961617040895482189}
   - {fileID: 6502338455035011502}
   - {fileID: 5941240169160419703}
   m_Father: {fileID: 0}
