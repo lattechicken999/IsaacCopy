@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a7c83b63707b5945b6dc4b3014b238f, type: 3}
+  m_Name: MapManagerSO
+  m_EditorClassIdentifier: 
+  StartRooms:
+  - {fileID: 4171966894280038558, guid: e212852ecf0144c4aadacbf31302498c, type: 3}
+  NormalRooms:
+  - {fileID: 4171966894280038558, guid: 18a9bf2e9ff7b9446ae941fbeb34aaf9, type: 3}
+  - {fileID: 4171966894280038558, guid: 245a1ca994c26e640b03669dd03865e7, type: 3}
+  BigRooms:
+  - {fileID: 9200382373459088258, guid: 99f71aad8d67e3f4ab08fd4a58441c62, type: 3}
+  VerticalRooms:
+  - {fileID: 5202553121026552079, guid: 88bc2fb37ed293c409cab7e5069d37b6, type: 3}
+  HorizontalRooms:
+  - {fileID: 3942318116728476260, guid: 85ac9c11518b7994882475430742f027, type: 3}

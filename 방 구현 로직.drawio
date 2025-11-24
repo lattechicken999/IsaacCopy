@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.0.3 Chrome/140.0.7339.249 Electron/38.7.0 Safari/537.36" version="29.0.3">
   <diagram name="페이지-1" id="dYi9hIv6HUheR36FEGcu">
-    <mxGraphModel dx="1090" dy="817" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1090" dy="1178" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -49,7 +49,7 @@
         <mxCell id="WMVJfzzcOASaFt1d6HGQ-19" value="Room 정보 저장" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="610" y="90" width="100" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="WMVJfzzcOASaFt1d6HGQ-20" value="JSON 파일 로 방 진행 상황 저장" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="WMVJfzzcOASaFt1d6HGQ-20" value="각 룸의 클리어 상황/ 아이템 상황 등 저장됨" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="530" y="170" width="260" height="40" as="geometry" />
         </mxCell>
         <mxCell id="WMVJfzzcOASaFt1d6HGQ-21" value="껐다 킬 때 재시작이면 룸 정보 가져옴&lt;div&gt;(옵션)&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
@@ -192,17 +192,17 @@
         <mxCell id="9MOjpbxn5esFNN1ggrkb-3" value="Room 배치 로직" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="319" y="1260" width="190" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="9MOjpbxn5esFNN1ggrkb-6" value="목적 : 방 크기 종류에 따른 Map 정보 생성하여 JSON으로 저장.&lt;div&gt;장점 : Map 정보를 저장하고 불러들이기 편함.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;필요한것.&lt;/div&gt;&lt;div&gt;1. 생성할 방의 갯수&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- 가로/세로 방은 0.5 개로 침&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- 큰 방은 4개로 침 (가로 세로 면적이 2배이므로)&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- 노말 방은 1개로 침&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;조건&lt;/div&gt;&lt;div&gt;1. 각 방은 Node 형식으로 되어 있음&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- Node의 기본 형식은 다음 노드로 연결되는 Door 변수를 가짐&lt;br&gt;&lt;/div&gt;&lt;div&gt;2. 각 노드는 생성된 순서에 따라 List 에 저장됨&lt;/div&gt;&lt;div&gt;3. List Index 는 2D행렬 구조에 방 위치가 기록 됨.&lt;/div&gt;&lt;div&gt;4. 노드의 생성자는 이전 방에 대한 정보를 Door 에 기록함&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;로직.&lt;/div&gt;&lt;div&gt;1. 시작 방을 기준으로 2~4개의 방향으로 문을 생성&lt;/div&gt;&lt;div&gt;2. 각 방향으로 Room Node 를 생성 (종류는 랜덤으로 가져옴)&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- Door 에 New Room Node 를 넣는 것임.&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- Room Node 를 생성 하기 전에 해당 방향으로 설치 가능한 Room 체크 필요&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- 이미 맞닿아 있는 Room 이 있다면 서로 해당 방향의 Door를 Link 해줌&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;/span&gt;- 가로 Room은 Left Right, 세로 Room은 Up Down Door 만 있다는 것&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;3. 생성된 Room Node 는 Queue 에 담김 (각 경로에 방을 평등하게 생성)&lt;/div&gt;&lt;div&gt;4. Queue 에서 Node 를 가져와 1번 부터 반복&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- 시작 방이 아닐 때는 0~3&amp;nbsp; 개의 문을 생성함 (들어온 문은 강제 생성이 됨)&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- 확률 (0 : 15% , 1: 70%, 2:10%, 3 : 5% )&lt;br&gt;&lt;/div&gt;&lt;div&gt;5. 생성된 방의 갯수가 만족하면 Loop를 멈춤.&lt;/div&gt;&lt;div&gt;6. 만약 생성 할 방이 남아 있는데 Queue 가 비어있다면 문의 방향을 바꿔서라도 혹은 문의 개수를 하나 늘려서 Queue를 채움&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=top;rounded=0;" vertex="1" parent="1">
+        <mxCell id="9MOjpbxn5esFNN1ggrkb-6" value="목적 : 방 크기 종류에 따른 Map 정보 생성하여 JSON으로 저장.&lt;div&gt;장점 : Map 정보를 저장하고 불러들이기 편함.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;필요한것.&lt;/div&gt;&lt;div&gt;1. 생성할 방의 갯수&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- 가로/세로 방은 0.5 개로 침&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- 큰 방은 4개로 침 (가로 세로 면적이 2배이므로)&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- 노말 방은 1개로 침&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;조건&lt;/div&gt;&lt;div&gt;1. 각 방은 Node 형식으로 되어 있음&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- Node의 기본 형식은 다음 노드로 연결되는 Door 변수를 가짐&lt;br&gt;&lt;/div&gt;&lt;div&gt;2. 각 노드는 생성된 순서에 따라 List 에 저장됨&lt;/div&gt;&lt;div&gt;3. List Index 는 2D행렬 구조에 방 위치가 기록 됨.&lt;/div&gt;&lt;div&gt;4. 노드의 생성자는 이전 방에 대한 정보를 Door 에 기록함&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;로직.&lt;/div&gt;&lt;div&gt;1. 시작 방을 기준으로 2~4개의 방향으로 문을 생성&lt;/div&gt;&lt;div&gt;2. 각 방향으로 Room Node 를 생성 (종류는 랜덤으로 가져옴)&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- Door 에 New Room Node 를 넣는 것임.&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- Room Node 를 생성 하기 전에 해당 방향으로 설치 가능한 Room 체크 필요&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- 이미 맞닿아 있는 Room 이 있다면 서로 해당 방향의 Door를 Link 해줌&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;/span&gt;- 가로 Room은 Left Right, 세로 Room은 Up Down Door 만 있다는 것&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;3. 생성된 Room Node 는 Queue 에 담김 (각 경로에 방을 평등하게 생성)&lt;/div&gt;&lt;div&gt;4. Queue 에서 Node 를 가져와 1번 부터 반복&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- 시작 방이 아닐 때는 0~3&amp;nbsp; 개의 문을 생성함 (들어온 문은 강제 생성이 됨)&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- 확률 (0 : 15% , 1: 70%, 2:10%, 3 : 5% )&lt;br&gt;&lt;/div&gt;&lt;div&gt;5. 생성된 방의 갯수가 만족하면 Loop를 멈춤.&lt;/div&gt;&lt;div&gt;6. 만약 생성 할 방이 남아 있는데 Queue 가 비어있다면 문의 방향을 바꿔서라도 혹은 문의 개수를 하나 늘려서 Queue를 채움&lt;/div&gt;&lt;div&gt;7. 마지막으로 생성되는 방은 보스 방임&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=top;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="30" y="1300" width="770" height="470" as="geometry" />
         </mxCell>
         <mxCell id="9MOjpbxn5esFNN1ggrkb-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="9MOjpbxn5esFNN1ggrkb-7" target="9MOjpbxn5esFNN1ggrkb-21">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="9MOjpbxn5esFNN1ggrkb-7" value="시작" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="30" y="1780" width="80" height="40" as="geometry" />
+          <mxGeometry x="57.5" y="1780" width="80" height="40" as="geometry" />
         </mxCell>
         <mxCell id="9MOjpbxn5esFNN1ggrkb-10" value="Loop : 생성 할 방 갯수 &amp;gt; 0" style="swimlane;whiteSpace=wrap;html=1;startSize=20;" vertex="1" parent="1">
-          <mxGeometry x="160" y="1890" width="531" height="420" as="geometry" />
+          <mxGeometry x="187.5" y="1890" width="531" height="420" as="geometry" />
         </mxCell>
         <mxCell id="9MOjpbxn5esFNN1ggrkb-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="9MOjpbxn5esFNN1ggrkb-10" source="9MOjpbxn5esFNN1ggrkb-12" target="9MOjpbxn5esFNN1ggrkb-13">
           <mxGeometry relative="1" as="geometry" />
@@ -314,34 +314,34 @@
         </mxCell>
         <mxCell id="9MOjpbxn5esFNN1ggrkb-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="9MOjpbxn5esFNN1ggrkb-21" target="9MOjpbxn5esFNN1ggrkb-23">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="310" y="1801" as="targetPoint" />
+            <mxPoint x="337.5" y="1801" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="9MOjpbxn5esFNN1ggrkb-21" value="시작 Room Node 생성&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="160" y="1778" width="121" height="45" as="geometry" />
+          <mxGeometry x="187.5" y="1778" width="121" height="45" as="geometry" />
         </mxCell>
         <mxCell id="9MOjpbxn5esFNN1ggrkb-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="9MOjpbxn5esFNN1ggrkb-23" target="9MOjpbxn5esFNN1ggrkb-25">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="9MOjpbxn5esFNN1ggrkb-23" value="2D 배열 생성&lt;br&gt;(필요한 Room 갯수 *2 만큼 크기를 잡음)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="322.5" y="1779" width="105" height="42" as="geometry" />
+          <mxGeometry x="350" y="1779" width="105" height="42" as="geometry" />
         </mxCell>
         <mxCell id="9MOjpbxn5esFNN1ggrkb-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="9MOjpbxn5esFNN1ggrkb-25" target="9MOjpbxn5esFNN1ggrkb-10">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="9MOjpbxn5esFNN1ggrkb-25" value="중앙에 시작 노드 배치" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="470" y="1779" width="105" height="42" as="geometry" />
+          <mxGeometry x="497.5" y="1779" width="105" height="42" as="geometry" />
         </mxCell>
         <mxCell id="9MOjpbxn5esFNN1ggrkb-35" value="Queue" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="4" y="1890" width="120" height="360" as="geometry" />
+          <mxGeometry x="31.5" y="1890" width="120" height="360" as="geometry" />
         </mxCell>
         <mxCell id="9MOjpbxn5esFNN1ggrkb-40" value="" style="shape=link;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="9MOjpbxn5esFNN1ggrkb-35" target="9MOjpbxn5esFNN1ggrkb-21">
           <mxGeometry width="100" relative="1" as="geometry">
-            <mxPoint x="140" y="1850" as="sourcePoint" />
-            <mxPoint x="240" y="1850" as="targetPoint" />
+            <mxPoint x="167.5" y="1850" as="sourcePoint" />
+            <mxPoint x="267.5" y="1850" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="64" y="1860" />
-              <mxPoint x="221" y="1860" />
+              <mxPoint x="91.5" y="1860" />
+              <mxPoint x="248.5" y="1860" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -352,8 +352,8 @@
         </mxCell>
         <mxCell id="9MOjpbxn5esFNN1ggrkb-42" value="" style="shape=link;html=1;rounded=0;" edge="1" parent="1">
           <mxGeometry width="100" relative="1" as="geometry">
-            <mxPoint x="125" y="1940" as="sourcePoint" />
-            <mxPoint x="180" y="1940" as="targetPoint" />
+            <mxPoint x="152.5" y="1940" as="sourcePoint" />
+            <mxPoint x="207.5" y="1940" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="9MOjpbxn5esFNN1ggrkb-44" value="Node =&amp;gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="9MOjpbxn5esFNN1ggrkb-42">
@@ -363,8 +363,8 @@
         </mxCell>
         <mxCell id="9MOjpbxn5esFNN1ggrkb-47" value="" style="shape=link;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.999;exitY=0.766;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="9MOjpbxn5esFNN1ggrkb-35" target="9MOjpbxn5esFNN1ggrkb-46">
           <mxGeometry width="100" relative="1" as="geometry">
-            <mxPoint x="140" y="2060" as="sourcePoint" />
-            <mxPoint x="240" y="2060" as="targetPoint" />
+            <mxPoint x="167.5" y="2060" as="sourcePoint" />
+            <mxPoint x="267.5" y="2060" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="9MOjpbxn5esFNN1ggrkb-48" value="&amp;lt;= Node" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="9MOjpbxn5esFNN1ggrkb-47">
