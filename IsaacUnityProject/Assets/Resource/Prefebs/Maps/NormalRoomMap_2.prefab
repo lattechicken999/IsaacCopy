@@ -171,6 +171,7 @@ GameObject:
   - component: {fileID: 6299585920041107042}
   - component: {fileID: 325667104227244337}
   - component: {fileID: 8014804286368080983}
+  - component: {fileID: 8799518847293262257}
   m_Layer: 0
   m_Name: RightDoor
   m_TagString: Untagged
@@ -338,6 +339,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.1, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &8799518847293262257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 498660747881162789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a163cd60cf105cb40bc8d07043c2b0f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1733348927401066319
 GameObject:
   m_ObjectHideFlags: 0
@@ -780,6 +793,7 @@ GameObject:
   - component: {fileID: 1188552922426059058}
   - component: {fileID: 7320022662073105358}
   - component: {fileID: 326570548357903944}
+  - component: {fileID: 4336471448955822371}
   m_Layer: 0
   m_Name: TopDoor
   m_TagString: Untagged
@@ -947,6 +961,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.1, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &4336471448955822371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3161498188525183488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a163cd60cf105cb40bc8d07043c2b0f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3166333292706029036
 GameObject:
   m_ObjectHideFlags: 0
@@ -6356,6 +6382,7 @@ GameObject:
   - component: {fileID: 2486718814810925689}
   - component: {fileID: 659483393968626950}
   - component: {fileID: 5806706277070023732}
+  - component: {fileID: 6630731016458458494}
   m_Layer: 0
   m_Name: BottomDoor
   m_TagString: Untagged
@@ -6523,6 +6550,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.1, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &6630731016458458494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7660172149549437541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a163cd60cf105cb40bc8d07043c2b0f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7774115050576754032
 GameObject:
   m_ObjectHideFlags: 0
@@ -7518,6 +7557,7 @@ GameObject:
   - component: {fileID: 4709681007913164715}
   - component: {fileID: 5427735411566966808}
   - component: {fileID: 4230653173994841549}
+  - component: {fileID: 5748885063529959667}
   m_Layer: 0
   m_Name: LeftDoor
   m_TagString: Untagged
@@ -7685,3 +7725,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.1, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &5748885063529959667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8948406487168664003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a163cd60cf105cb40bc8d07043c2b0f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -14,6 +14,7 @@ public class MapNode
     //int _downIndex;
 
     //룸 타입 저장용 
+
     private Rooms _roomType;
     //설치 좌표
     public int MapXIndex { private set; get; }
@@ -27,6 +28,7 @@ public class MapNode
         private set; get;
     }
     public GameObject GetPrefeb { private set; get; }
+    public GameObject RoomInstance { private set; get; }
     public MapNode(Rooms type, GameObject prefeb, int nodeindex,int xindex, int yindex)
     {
         _roomType = type;
@@ -36,6 +38,10 @@ public class MapNode
         MapYIndex = yindex;
     }
 
+    public void Instantiate()
+    {
+        RoomInstance = GameObject.Instantiate(GetPrefeb);
+    }
     /// <summary>
     /// Door 중 비어있는 것을 랜덤으로 반환
     /// </summary>

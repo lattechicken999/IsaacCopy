@@ -11,7 +11,7 @@ public class MapCreate
     private int[,] _mapLayout;
 
     int roomIndex = 1;
-    int mapSizeCount;
+    float mapSizeCount;
 
     public MapCreate(MapManagerSO prefebs)
     {
@@ -51,9 +51,11 @@ public class MapCreate
         Rooms type;
         MapNode newNode = null;
         MapNode node = _roomQueue.Dequeue();
+        int doornum;
 
         //생성할 문의 갯수
-        int doornum = GetRandomDoorNum(node.RoomType);
+        if (_roomQueue.Count == 0) doornum = GetRandomDoorNum(node.RoomType,1);
+        else doornum = GetRandomDoorNum(node.RoomType);
 
         for (int i = 0; i < doornum; i++)
         {
@@ -78,10 +80,22 @@ public class MapCreate
             _roomQueue.Enqueue(newNode);
             _rooms.Add(newNode);
             _mapLayout[x, y] = _rooms.Count;
-            mapSizeCount--;
+            DecreaseCount(type);
         }
     }
 
+    private void DecreaseCount(Rooms r)
+    {
+        if (r == Rooms.VerticalRoom || r == Rooms.HorizontalRoom)
+        {
+            mapSizeCount -= 0.5f;
+        }
+        else
+        {
+            mapSizeCount--;
+        }
+
+    }
     /// <summary>
     /// 방향에 따른 옳바른 방 타입만 가져오게 하는 함수
     /// 확장한다면 다른 방식이 필요해 보임
@@ -179,6 +193,18 @@ public class MapCreate
                 return Random.Range(0, 2);
         }
     }
+    private int GetRandomDoorNum(Rooms type,int min)
+    {
+        switch (type)
+        {
+            case Rooms.StartRoom:
+                return RandomForStart();
+            case Rooms.NormalRoom:
+                return RandomForNormalRoom_nozero();
+            default:
+                return Random.Range(min, 2);
+        }
+    }
     private int RandomForStart()
     {
         return Random.Range(2, 5);
@@ -187,6 +213,13 @@ public class MapCreate
     {
         float rate = Random.value;
         if (rate <= 0.15f) return 0;
+        if (rate <= 0.85f) return 1;
+        if (rate <= 0.95f) return 2;
+        return 3;
+    }
+    private int RandomForNormalRoom_nozero()
+    {
+        float rate = Random.value;
         if (rate <= 0.85f) return 1;
         if (rate <= 0.95f) return 2;
         return 3;

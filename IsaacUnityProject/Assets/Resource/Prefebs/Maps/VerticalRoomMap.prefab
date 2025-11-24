@@ -4037,6 +4037,7 @@ GameObject:
   - component: {fileID: 2845180512020635638}
   - component: {fileID: 8946340097696910248}
   - component: {fileID: 887647302180443607}
+  - component: {fileID: 3513428732492917140}
   m_Layer: 0
   m_Name: TopDoor
   m_TagString: Untagged
@@ -4204,6 +4205,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.1, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &3513428732492917140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7266957188664982650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a163cd60cf105cb40bc8d07043c2b0f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7550817391078565367
 GameObject:
   m_ObjectHideFlags: 0
@@ -4459,6 +4472,7 @@ GameObject:
   - component: {fileID: 3674429626887025166}
   - component: {fileID: 2514243978663969632}
   - component: {fileID: 1855833174940039812}
+  - component: {fileID: 5173482346420127095}
   m_Layer: 0
   m_Name: BottomDoor
   m_TagString: Untagged
@@ -4626,6 +4640,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.1, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &5173482346420127095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8533884950070474187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a163cd60cf105cb40bc8d07043c2b0f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9017442459596937807
 GameObject:
   m_ObjectHideFlags: 0

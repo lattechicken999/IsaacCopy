@@ -11,8 +11,8 @@ public class MapManager :Singleton<MapManager>
         var rooms = mc.CreateMap(10);
         foreach(var r in rooms)
         {
-            var temp = Instantiate(r.GetPrefeb);
-            temp.transform.position = new Vector2(r.MapXIndex * 20, r.MapYIndex * 14);
+            r.Instantiate();
+            r.RoomInstance.transform.position = new Vector2(r.MapXIndex * 20, r.MapYIndex * 14);
         }
     }
 }
