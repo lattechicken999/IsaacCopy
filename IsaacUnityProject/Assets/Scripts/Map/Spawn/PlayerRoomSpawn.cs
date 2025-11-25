@@ -7,7 +7,7 @@ public class PlayerRoomSpawn : MonoBehaviour
 {
     private Transform[] _spawns;
     private PolygonCollider2D _bounder;
-    private void Awake()
+    private void Start()
     {
         var spawnPoint = transform.Find("SpawnPoint");
         if (spawnPoint == null) return;

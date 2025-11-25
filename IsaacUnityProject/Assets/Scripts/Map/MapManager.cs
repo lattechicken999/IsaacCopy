@@ -22,7 +22,6 @@ public class MapManager :Singleton<MapManager>
         {
             r.Instantiate();
             r.RoomInstance.transform.position = new Vector2(r.MapXIndex * 20, r.MapYIndex * 14);
-            //DoorManager.Instance.SetNode(r);
             r.RoomInstance.AddComponent<PlayerRoomSpawn>();
         }
         //시작 방 문 초기화
