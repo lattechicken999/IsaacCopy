@@ -36,4 +36,8 @@ public class PlayerModel : MonoBehaviour
     {
         _pv.MoveCommand(m, _speed);
     }
+    public void SetPlayerAttackValue(Vector2 att)
+    {
+        _pv.AttackCommand(att);
+    }
 }

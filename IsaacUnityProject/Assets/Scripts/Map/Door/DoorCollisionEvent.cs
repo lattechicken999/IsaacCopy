@@ -9,7 +9,6 @@ public class DoorCollisionEvent : MonoBehaviour
     {
         if(collision.CompareTag("Player") )
         {
-            Debug.Log(gameObject.name);
             MapManager.Instance.ChangeRoom((DoorDirection)Enum.Parse(typeof(DoorDirection), gameObject.name));
         }
     }

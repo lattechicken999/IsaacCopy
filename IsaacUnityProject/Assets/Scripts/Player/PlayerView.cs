@@ -11,6 +11,7 @@ public class PlayerView : MonoBehaviour
     private Animator _anim;
     private CinemachineConfiner2D _camConfiner;
     private Vector2 _moveDir;
+    private Vector2 _attDir;
     private Vector2 _oldMoveDir;
     private float _speed;
 
@@ -24,6 +25,7 @@ public class PlayerView : MonoBehaviour
     private void FixedUpdate()
     {
         OnMove();
+        OnAttack();
     }
     private void OnMove()
     {
@@ -37,12 +39,16 @@ public class PlayerView : MonoBehaviour
         }
         else
         {
-            //_rig.MovePosition(_rig.position + (_moveDir)*_speed*Time.deltaTime);
             _rig.velocity = _moveDir*_speed;
             SetAnimationDirection(_moveDir);
             _oldMoveDir = _moveDir;
         }
         
+    }
+    private void OnAttack()
+    {
+        if(_attDir == Vector2.zero) return;
+        SetAnimationDirection(_attDir);
     }
     
     private Vector2 GetLookAxis(Vector2 dir)
@@ -64,6 +70,10 @@ public class PlayerView : MonoBehaviour
     {
         _moveDir = moveDir;
         _speed = speed * 3;
+    }
+    public void AttackCommand(Vector2 attDir)
+    {
+        _attDir = attDir;
     }
     public void SetBounder(PolygonCollider2D bounder)
     {
