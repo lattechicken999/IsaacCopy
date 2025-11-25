@@ -86,6 +86,10 @@ public class MapCreate
         }
     }
 
+    /// <summary>
+    /// 방을 생성하면 호출. 
+    /// </summary>
+    /// <param name="r"></param>
     private void DecreaseCount(Rooms r)
     {
         if (r == Rooms.VerticalRoom || r == Rooms.HorizontalRoom)
@@ -152,15 +156,23 @@ public class MapCreate
         }
         return true;
     }
+
+    /// <summary>
+    /// 문의 방향 역전. 해당 문과 연결된 방문의 방향은 반대일 것이기 때문
+    /// </summary>
+    /// <param name="dir"></param>
+    /// <returns></returns>
     private DoorDirection ReverseDir(DoorDirection dir)
     {
-        DoorDirection targetDir;
-        if (dir == DoorDirection.Up) targetDir = DoorDirection.Down;
-        else if (dir == DoorDirection.Down) targetDir = DoorDirection.Up;
-        else if (dir == DoorDirection.Left) targetDir = DoorDirection.Right;
-        else targetDir = DoorDirection.Left;
-        return targetDir;
+        return (DoorDirection)(((int)DoorDirection._End - 1) - (int)dir);
     }
+    
+    /// <summary>
+    /// Map에 위치를 기록하기 위해 index 조정
+    /// </summary>
+    /// <param name="x"></param>
+    /// <param name="y"></param>
+    /// <param name="dir"></param>
     private void MoveIndex(ref int x, ref int y,DoorDirection dir)
     {
         if (dir == DoorDirection.Up) y++;
@@ -168,6 +180,12 @@ public class MapCreate
         if (dir == DoorDirection.Left) x--;
         if (dir == DoorDirection.Right) x++;
     }
+
+    /// <summary>
+    /// 등록된 프리팹중 랜덤으로 가져옴
+    /// </summary>
+    /// <param name="type"></param>
+    /// <returns></returns>
     private GameObject GetRoomPrefeb(Rooms type)
     {
         switch (type)
@@ -186,6 +204,11 @@ public class MapCreate
         return null;
     }
 
+    /// <summary>
+    /// 랜덤으로 어느 타입의 방을 가져옴
+    /// </summary>
+    /// <param name="type"></param>
+    /// <returns></returns>
     private int GetRandomDoorNum(Rooms type)
     {
         switch (type)
@@ -200,6 +223,13 @@ public class MapCreate
                 return Random.Range(0, 2);
         }
     }
+
+    /// <summary>
+    /// 랜덤으로 어느 타입의 방을 가져옴
+    /// </summary>
+    /// <param name="type"></param>
+    /// <param name="min">최소치를 설정함</param>
+    /// <returns></returns>
     private int GetRandomDoorNum(Rooms type,int min)
     {
         switch (type)
@@ -212,10 +242,20 @@ public class MapCreate
                 return Random.Range(min, 2);
         }
     }
+    
+    /// <summary>
+    /// 시작방은 문의 갯수가 2~4여야 해서 따로 분리함
+    /// </summary>
+    /// <returns></returns>
     private int RandomForStart()
     {
         return Random.Range(2, 5);
     }
+
+    /// <summary>
+    /// 확률적으로 방문의 갯수를 가져옴
+    /// </summary>
+    /// <returns></returns>
     private int RandomForNormalRoom()
     {
         float rate = Random.value;

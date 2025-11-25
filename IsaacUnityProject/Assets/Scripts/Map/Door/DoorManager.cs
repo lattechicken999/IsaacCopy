@@ -16,8 +16,8 @@ public class DoorManager : Singleton<DoorManager>,IRoomStatus
         _curNode = cur;
         _doors = _curNode.RoomInstance.transform.Find("Doors");
         _noDoors = _curNode.RoomInstance.transform.Find("NoDoor");
-        SetRoomDoor();
         InitDoorViewComponent();
+        SetRoomDoor();
     }
     private void InitDoorViewComponent()
     {
@@ -25,6 +25,12 @@ public class DoorManager : Singleton<DoorManager>,IRoomStatus
 
         for (int i =0; i< _doors.childCount;i++)
         {
+            DoorView temp;
+            if(_doors.GetChild(i).gameObject.TryGetComponent<DoorView>(out temp))
+            {
+                _doorViewList.Add(temp);
+                continue;
+            }
             _doorViewList.Add(_doors.GetChild(i).gameObject.AddComponent<DoorView>());
         }
     }

@@ -1,6 +1,6 @@
 ﻿public enum DoorDirection
 {
-    Up,Down, Left, Right,_End
+    Up, Left, Right, Down,_End
 }
 public enum Rooms
 {
