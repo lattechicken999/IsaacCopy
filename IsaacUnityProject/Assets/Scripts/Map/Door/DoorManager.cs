@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class DoorManager : Singleton<DoorManager>,IRoomStatus
+public class DoorManager : Singleton<DoorManager>
 {
     private RoomNode _curNode;
     private Transform _doors;
@@ -25,13 +25,15 @@ public class DoorManager : Singleton<DoorManager>,IRoomStatus
 
         for (int i =0; i< _doors.childCount;i++)
         {
-            DoorView temp;
-            if(_doors.GetChild(i).gameObject.TryGetComponent<DoorView>(out temp))
+            DoorView dv;
+
+            if(_doors.GetChild(i).gameObject.TryGetComponent<DoorView>(out dv))
             {
-                _doorViewList.Add(temp);
+                _doorViewList.Add(dv);
                 continue;
             }
             _doorViewList.Add(_doors.GetChild(i).gameObject.AddComponent<DoorView>());
+
         }
     }
     private void SetRoomDoor()

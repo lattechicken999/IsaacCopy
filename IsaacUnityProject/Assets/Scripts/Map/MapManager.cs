@@ -8,7 +8,7 @@ public class MapManager :Singleton<MapManager>
 
     private List<RoomNode> _rooms;
     private RoomNode _currentRoom;
-    private PlayerRoomSpawn _currentPRS;
+    private PlayerRoomTeleport _currentPRS;
 
     private void Start()
     {
@@ -22,19 +22,20 @@ public class MapManager :Singleton<MapManager>
         {
             r.Instantiate();
             r.RoomInstance.transform.position = new Vector2(r.MapXIndex * 20, r.MapYIndex * 14);
-            r.RoomInstance.AddComponent<PlayerRoomSpawn>();
+            r.RoomInstance.AddComponent<PlayerRoomTeleport>();
         }
         //시작 방 문 초기화
         DoorManager.Instance.SetNode(_rooms[0]);
         _currentRoom = _rooms[0];
-        _currentPRS = _currentRoom.RoomInstance.GetComponent<PlayerRoomSpawn>();
+        _currentPRS = _currentRoom.RoomInstance.GetComponent<PlayerRoomTeleport>();
     }
     public void ChangeRoom(DoorDirection dir)
     {
         _currentRoom = _currentRoom._doors[(int)dir];
-        _currentPRS = _currentRoom.RoomInstance.GetComponent<PlayerRoomSpawn>();
+        _currentPRS = _currentRoom.RoomInstance.GetComponent<PlayerRoomTeleport>();
 
         DoorManager.Instance.SetNode(_currentRoom);
+        DoorManager.Instance.NotifyRoomStatus(_currentRoom.roomStatus);
         DoorDirection revDir = (DoorDirection)(((int)DoorDirection._End - 1) - (int)dir);
         _currentPRS.Teleport(revDir);
 

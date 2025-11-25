@@ -21,6 +21,7 @@ public class RoomNode
     public int MapYIndex{private set; get;}
 
     public bool BossRoom { private set; get; }
+    public RoomStatus roomStatus { private set; get; }
 
     public Rooms RoomType
     { private set; get; }
@@ -46,6 +47,7 @@ public class RoomNode
 
     public void Instantiate()
     {
+        roomStatus = RoomStatus.Ready;
         RoomInstance = GameObject.Instantiate(GetPrefeb);
     }
     /// <summary>
