@@ -21,14 +21,19 @@ public class PlayerControll : MonoBehaviour
     {
         _moveAction.performed += (ctx) => _pm.SetPlayerMoveValue(ctx.ReadValue<Vector2>());
         _moveAction.canceled += ctx => _pm.SetPlayerMoveValue(Vector2.zero);
-        _attackAction.performed += ctx => _pm.SetPlayerAttackValue(ctx.ReadValue<Vector2>());
+        _attackAction.performed += OnAttact;
         _attackAction.canceled += ctx => _pm.SetPlayerAttackValue(Vector2.zero);
     }
     private void OnDisable()
     {
         _moveAction.performed -= (ctx) => _pm.SetPlayerMoveValue(ctx.ReadValue<Vector2>());
         _moveAction.canceled -= ctx => _pm.SetPlayerMoveValue( Vector2.zero);
-        _attackAction.performed -= ctx => _pm.SetPlayerAttackValue(ctx.ReadValue<Vector2>());
+        _attackAction.performed -= OnAttact;
         _attackAction.canceled -= ctx => _pm.SetPlayerAttackValue(Vector2.zero);
     }
+    private void OnAttact(InputAction.CallbackContext ctx)
+    {
+        _pm.SetPlayerAttackValue(ctx.ReadValue<Vector2>());
+    }
+
 }

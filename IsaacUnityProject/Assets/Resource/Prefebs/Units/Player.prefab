@@ -312,6 +312,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerSO: {fileID: 11400000, guid: b7cd78a357b7bc947b04137ea4e52525, type: 2}
+  _ts: {fileID: 2696473391901697330}
 --- !u!1 &1663839106478993222
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,6 +322,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 830129044085664365}
+  - component: {fileID: 2696473391901697330}
   m_Layer: 0
   m_Name: TearSpawner
   m_TagString: Untagged
@@ -343,6 +345,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1329037883672195339}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2696473391901697330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1663839106478993222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc840fda94a7569438402f52892e9c21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tearsPrefeb: {fileID: 2604179239433607639, guid: 13d82bcdc8bea48478a228fa6a64d620, type: 3}
+  _playerModel: {fileID: 417303798466840376}
 --- !u!1 &5421450246668287993
 GameObject:
   m_ObjectHideFlags: 0
