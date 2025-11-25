@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MapNode
+public class RoomNode
 {
     //Map Node 들 간 링크용
-    public  MapNode[] _doors = new MapNode[4];
+    public  RoomNode[] _doors = new RoomNode[4];
 
     ////JSON 파일에 저장용
     //int _leftIndex;
@@ -35,7 +35,7 @@ public class MapNode
     }
     public GameObject GetPrefeb { private set; get; }
     public GameObject RoomInstance { private set; get; }
-    public MapNode(Rooms type, GameObject prefeb, int nodeindex,int xindex, int yindex)
+    public RoomNode(Rooms type, GameObject prefeb, int nodeindex,int xindex, int yindex)
     {
         _roomType = type;
         GetPrefeb = prefeb;
@@ -80,7 +80,7 @@ public class MapNode
     /// <param name="linkedNode">호출자 Node</param>
     /// <param name="doorDir">문의 방향</param>
     /// <returns>성공하면 자기자신을 return, 실패하면 null </returns>
-    public MapNode LinkDoor(MapNode linkedNode, DoorDirection doorDir)
+    public RoomNode LinkDoor(RoomNode linkedNode, DoorDirection doorDir)
     {
         if (_roomType == Rooms.VerticalRoom)
         {

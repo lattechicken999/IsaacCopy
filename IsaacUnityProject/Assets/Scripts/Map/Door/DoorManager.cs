@@ -5,22 +5,32 @@ using UnityEngine;
 
 public class DoorManager : Singleton<DoorManager>,IRoomStatus
 {
-    private MapNode _curNode;
+    private RoomNode _curNode;
     private Transform _doors;
     private Transform _doorBackground;
     private Transform _noDoors;
-    private List<DoorView> _doorList;
+    private List<DoorView> _doorViewList;
 
-    public void SetNode(MapNode cur)
+    public void SetNode(RoomNode cur)
     {
         _curNode = cur;
         _doors = _curNode.RoomInstance.transform.Find("Doors");
         _noDoors = _curNode.RoomInstance.transform.Find("NoDoor");
         SetRoomDoor();
+        InitDoorViewComponent();
+    }
+    private void InitDoorViewComponent()
+    {
+        _doorViewList = new List<DoorView>();
+
+        for (int i =0; i< _doors.childCount;i++)
+        {
+            _doorViewList.Add(_doors.GetChild(i).gameObject.AddComponent<DoorView>());
+        }
     }
     private void SetRoomDoor()
     {
-        _doorList = new List<DoorView>();
+        _doorViewList = new List<DoorView>();
         if (_curNode == null) return;
         for(int i = 0; i<4;i++)
         {
@@ -29,7 +39,7 @@ public class DoorManager : Singleton<DoorManager>,IRoomStatus
                 var temp = _doors.Find(((DoorDirection)i).ToString());
                 if (temp != null)
                 {
-                    _doorList.Add(temp.gameObject.GetComponent<DoorView>());
+                    _doorViewList.Add(temp.gameObject.GetComponent<DoorView>());
                     temp.gameObject.SetActive(true);
                 }
                 _noDoors.Find(((DoorDirection)i).ToString())?.gameObject.SetActive(false);
@@ -43,12 +53,16 @@ public class DoorManager : Singleton<DoorManager>,IRoomStatus
     }
     private void ChangeDoorStatus(DoorStatus status)
     {
-        foreach(var door in _doorList)
+        foreach(var door in _doorViewList)
         {
             door.SetDoorStatus(status);
         }
     }
 
+    /// <summary>
+    /// Room의 상태가 바뀔 때 마다 알림 받음
+    /// </summary>
+    /// <param name="roomStatus"></param>
     public void NotifyRoomStatus(RoomStatus roomStatus)
     {
         switch (roomStatus)

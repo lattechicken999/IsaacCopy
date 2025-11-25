@@ -6,8 +6,8 @@ using UnityEngine;
 public class MapCreate
 {
     private MapManagerSO _roomPrefebs;
-    private List<MapNode> _rooms;
-    private Queue<MapNode> _roomQueue;
+    private List<RoomNode> _rooms;
+    private Queue<RoomNode> _roomQueue;
     private int[,] _mapLayout;
 
     int roomIndex = 1;
@@ -17,10 +17,10 @@ public class MapCreate
     {
         _roomPrefebs = prefebs;
     }
-    public List<MapNode> CreateMap(int mapSize)
+    public List<RoomNode> CreateMap(int mapSize)
     {
-        _rooms = new List<MapNode>();
-        _roomQueue = new Queue<MapNode>();
+        _rooms = new List<RoomNode>();
+        _roomQueue = new Queue<RoomNode>();
         //충분한 크기 잡아주기
         _mapLayout = new int[mapSize*2,mapSize*2];
 
@@ -28,7 +28,7 @@ public class MapCreate
         //시작방 빼기
         mapSizeCount = mapSize -1;
 
-        _rooms.Add(new MapNode(Rooms.StartRoom, GetRoomPrefeb(Rooms.StartRoom), _rooms.Count+1, mapSize, mapSize));
+        _rooms.Add(new RoomNode(Rooms.StartRoom, GetRoomPrefeb(Rooms.StartRoom), _rooms.Count+1, mapSize, mapSize));
 
         //맵 구조에 기록
         _mapLayout[mapSize, mapSize] = roomIndex;
@@ -50,8 +50,8 @@ public class MapCreate
         int x;
         int y;
         Rooms type;
-        MapNode newNode = null;
-        MapNode node = _roomQueue.Dequeue();
+        RoomNode newNode = null;
+        RoomNode node = _roomQueue.Dequeue();
         int doornum;
 
         //생성할 문의 갯수
@@ -73,7 +73,7 @@ public class MapCreate
 
             type = GetNewRoomType(roomDir);
 
-            newNode = new MapNode(type,
+            newNode = new RoomNode(type,
                                                    GetRoomPrefeb(type),
                                                    _rooms.Count + 1,
                                                    x,y
@@ -135,7 +135,7 @@ public class MapCreate
     /// <param name="node">기준 노드</param>
     /// <param name="dir">방향</param>
     /// <returns>true면 설치 가능</returns>
-    private bool CheckCreatable(MapNode node, DoorDirection dir)
+    private bool CheckCreatable(RoomNode node, DoorDirection dir)
     {
         int x = node.MapXIndex;
         int y = node.MapYIndex;
