@@ -40,6 +40,7 @@ public class MapCreate
             CreateNewRoom();
         }
         _rooms[_rooms.Count - 1].SetBossRoom();
+        _rooms[_rooms.Count - 1].SetBoosRoomPrefeb(_roomPrefebs.BossRoom[0]);
         return _rooms;
     }
 

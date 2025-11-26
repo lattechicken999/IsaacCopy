@@ -3,21 +3,27 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class DoorManager : Singleton<DoorManager>
+public class RoomManager : Singleton<RoomManager>
 {
     private RoomNode _curNode;
     private Transform _doors;
-    private Transform _doorBackground;
     private Transform _noDoors;
     private List<DoorView> _doorViewList;
+    private RoomControll _curRoomControll;
+    public RoomState _roomState { private set; get; }
 
     public void SetNode(RoomNode cur)
     {
         _curNode = cur;
         _doors = _curNode.RoomInstance.transform.Find("Doors");
         _noDoors = _curNode.RoomInstance.transform.Find("NoDoor");
+        _roomState = _curNode.roomState;
+        _curRoomControll = _curNode.RoomInstance.GetComponent<RoomControll>();
+
         InitDoorViewComponent();
         SetRoomDoor();
+        StartRoomControll();
+        SetDoorAnimation();
     }
     private void InitDoorViewComponent()
     {
@@ -67,22 +73,45 @@ public class DoorManager : Singleton<DoorManager>
         }
     }
 
-    /// <summary>
-    /// Room의 상태가 바뀔 때 마다 알림 받음
-    /// </summary>
-    /// <param name="roomStatus"></param>
-    public void NotifyRoomStatus(RoomStatus roomStatus)
+    public void SetDoorAnimation()
     {
-        switch (roomStatus)
+        switch (_roomState)
         {
-            case RoomStatus.Ready:
+            case RoomState.Ready:
                 ChangeDoorStatus(DoorStatus.Open); break;
-            case RoomStatus.Cleared:
-                ChangeDoorStatus(DoorStatus.Open); break ;
-            case RoomStatus.Challenging:
-                ChangeDoorStatus(DoorStatus.Close); break ;
+            case RoomState.Cleared:
+                ChangeDoorStatus(DoorStatus.Open); break;
+            case RoomState.Challenging:
+                ChangeDoorStatus(DoorStatus.Close); break;
         }
     }
+
+    private void StartRoomControll()
+    {
+        switch(_roomState)
+        {
+            case RoomState.Cleared:
+                _curRoomControll.ClearChallenge(); break;
+            case RoomState.Ready:
+                _curRoomControll.StartChallenge(); break;
+            default:
+                _curRoomControll.StartChallenge(); break;
+        }
+    }
+    
+    public void ClearRoom()
+    {
+        _roomState = RoomState.Cleared;
+        _curNode.roomState = _roomState;
+        SetDoorAnimation(); 
+    }
+    public void StartChallenge()
+    {
+        _roomState = RoomState.Challenging;
+        _curNode.roomState = _roomState;
+        SetDoorAnimation();
+    }
+    
 
 
 }

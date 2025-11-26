@@ -13,6 +13,4 @@ public class PlayerScriptableObj : ScriptableObject
     public int Heart = 3;
     public int SoulHeart = 0;
 
-    [Header("Prefebs")]
-    public GameObject TearsPrefeb;
 }

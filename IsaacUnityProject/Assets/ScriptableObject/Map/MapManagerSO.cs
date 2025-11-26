@@ -8,4 +8,5 @@ public class MapManagerSO : ScriptableObject
     public GameObject[] BigRooms;
     public GameObject[] VerticalRooms;
     public GameObject[] HorizontalRooms;
+    public GameObject[] BossRoom;
 }

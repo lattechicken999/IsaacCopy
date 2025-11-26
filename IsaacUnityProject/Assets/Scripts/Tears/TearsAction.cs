@@ -57,12 +57,12 @@ public class TearsAction : MonoBehaviour
             }
         }
     }
-
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(other.CompareTag("Monster"))
+        if (collision.gameObject.CompareTag("Monster"))
         {
             CommandDestroyTear();
+            collision.gameObject.GetComponent<MonsterController>().TakenDamage(_parent.Damage);
         }
     }
     private void CommandDestroyTear()

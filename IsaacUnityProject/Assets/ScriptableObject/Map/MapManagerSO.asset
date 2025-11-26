@@ -23,3 +23,5 @@ MonoBehaviour:
   - {fileID: 5202553121026552079, guid: 88bc2fb37ed293c409cab7e5069d37b6, type: 3}
   HorizontalRooms:
   - {fileID: 3942318116728476260, guid: 85ac9c11518b7994882475430742f027, type: 3}
+  BossRoom:
+  - {fileID: 4171966894280038558, guid: 9d151d9f3fece0e4aa8b5364b8788ccd, type: 3}

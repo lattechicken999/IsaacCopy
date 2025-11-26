@@ -9,8 +9,8 @@ public struct sStatus
     public float _range;
     public float _shotSpeed;
     public float _speed;
-    public int _heart;
-    public int _soulHeart;
+    public float _heart;
+    public float _soulHeart;
 
 }
 [RequireComponent(typeof(PlayerView))]
@@ -37,6 +37,14 @@ public class PlayerModel : MonoBehaviour
         _subscribers = new List<IStatus>();
     }
 
+    public void TakeDamage(float damage)
+    {
+        _status._heart -= damage;
+        if(_status._heart <=0)
+        {
+            //게임 끝
+        }
+    }
     public void RegistSubscripber(IStatus sub)
     {
         if (_subscribers.Contains(sub)) return;

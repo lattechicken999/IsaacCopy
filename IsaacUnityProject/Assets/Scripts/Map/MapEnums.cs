@@ -10,7 +10,7 @@ public enum DoorStatus
 {
     None,  Close, Open,  _End
 }
-public enum RoomStatus
+public enum RoomState
 {
     Cleared, Challenging, Ready, _End
 }

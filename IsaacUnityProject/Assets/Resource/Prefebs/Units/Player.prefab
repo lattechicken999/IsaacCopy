@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4635901477729079537}
   - component: {fileID: 8075698639162954838}
   - component: {fileID: 7850082735674612319}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Virtual Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 8700385638274653152}
   - component: {fileID: 2123496414229363475}
   - component: {fileID: 417303798466840376}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -170,7 +170,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 5
   m_Sprite: {fileID: 458163579, guid: 1d372b2b23392324f8fc593efa35794c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -323,7 +323,7 @@ GameObject:
   m_Component:
   - component: {fileID: 830129044085664365}
   - component: {fileID: 2696473391901697330}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: TearSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -369,7 +369,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4737089339065206838}
   - component: {fileID: 7547332932505566845}
-  m_Layer: 0
+  - component: {fileID: 7809774092184739894}
+  m_Layer: 11
   m_Name: Battle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -426,6 +427,19 @@ CapsuleCollider2D:
   m_Offset: {x: -0.013469607, y: -0.11673623}
   m_Size: {x: 0.86244076, y: 1.2665275}
   m_Direction: 0
+--- !u!114 &7809774092184739894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5421450246668287993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68b574ebcfc225041a422b70d4489073, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pm: {fileID: 417303798466840376}
 --- !u!1 &8111341866324653907
 GameObject:
   m_ObjectHideFlags: 0
@@ -437,7 +451,7 @@ GameObject:
   - component: {fileID: 5068959584344746068}
   - component: {fileID: 6302296524065965726}
   - component: {fileID: 3459952707600931451}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: cm
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -21,7 +21,7 @@ public class RoomNode
     public int MapYIndex{private set; get;}
 
     public bool BossRoom { private set; get; }
-    public RoomStatus roomStatus { private set; get; }
+    public RoomState roomState { set; get; }
 
     public Rooms RoomType
     { private set; get; }
@@ -47,8 +47,12 @@ public class RoomNode
 
     public void Instantiate()
     {
-        roomStatus = RoomStatus.Ready;
+        roomState = RoomState.Ready;
         RoomInstance = GameObject.Instantiate(GetPrefeb);
+    }
+    public void SetBoosRoomPrefeb(GameObject prefeb)
+    {
+        GetPrefeb = prefeb;
     }
     /// <summary>
     /// Door 중 비어있는 것을 랜덤으로 반환

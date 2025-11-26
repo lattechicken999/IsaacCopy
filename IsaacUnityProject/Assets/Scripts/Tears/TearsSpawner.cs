@@ -24,7 +24,10 @@ public class TearsSpawner : MonoBehaviour,IStatus
     {
         get { return _status._shotSpeed; }
     }
-
+    public float Damage
+    {
+        get { return _status._damage; }
+    }
     private void Awake()
     {
         //오브젝트 풀 초기 생성
