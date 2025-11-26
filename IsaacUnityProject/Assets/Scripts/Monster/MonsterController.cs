@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 
 class SearchNode : IComparable<SearchNode>
 {
-    //private float precision = 3;
+    private float precision = 3;
     public float _H;//타겟까지 예상 비용
     public float _G;//다음칸 까지의 비용 (거리)
     public float _F;//H+G
@@ -34,25 +34,25 @@ class SearchNode : IComparable<SearchNode>
     public Vector2[] GetAdjPositions()
     {
         Vector2[] result = new Vector2[8];
-        //result[0] = _position - (Vector2.up/precision);
-        //result[1] = _position - (Vector2.down / precision);
-        //result[2] = _position - (Vector2.left / precision);
-        //result[3] = _position - (Vector2.right / precision);
-        //result[4] = _position - ((Vector2.up + Vector2.left) / precision);
-        //result[5] = _position - ((Vector2.up + Vector2.right) / precision);
-        //result[6] = _position - ((Vector2.down + Vector2.left) / precision);
-        //result[7] = _position - ((Vector2.down + Vector2.right) / precision);
-        int x =(int)(_position.x * 100);
-        int y =(int)(_position.y * 100);
+        result[0] = _position - (Vector2.up / precision);
+        result[1] = _position - (Vector2.down / precision);
+        result[2] = _position - (Vector2.left / precision);
+        result[3] = _position - (Vector2.right / precision);
+        result[4] = _position - ((Vector2.up + Vector2.left) / precision);
+        result[5] = _position - ((Vector2.up + Vector2.right) / precision);
+        result[6] = _position - ((Vector2.down + Vector2.left) / precision);
+        result[7] = _position - ((Vector2.down + Vector2.right) / precision);
+        //int x =(int)(_position.x * 100);
+        //int y =(int)(_position.y * 100);
 
-        result[0] = new Vector2((float)Math.Round((x - 33) / 100f, 3), (float)Math.Round((y) / 100f));
-        result[1] = new Vector2((float)Math.Round((x +33) / 100f, 3), (float)Math.Round((y) / 100f));
-        result[2] = new Vector2((float)Math.Round((x) / 100f, 3), (float)Math.Round((y -33) / 100f));
-        result[3] = new Vector2((float)Math.Round((x) / 100f, 3), (float)Math.Round((y +33) / 100f));
-        result[4] = new Vector2((float)Math.Round((x - 33) / 100f, 3), (float)Math.Round((y - 33) / 100f));
-        result[5] = new Vector2((float)Math.Round((x - 33) / 100f, 3), (float)Math.Round((y + 33) / 100f));
-        result[6] = new Vector2((float)Math.Round((x + 33) / 100f, 3), (float)Math.Round((y-33) / 100f));
-        result[7] = new Vector2((float)Math.Round((x + 33) / 100f, 3), (float)Math.Round((y+33) / 100f));
+        //result[0] = new Vector2((float)Math.Round((x - 33) / 100f, 3), (float)Math.Round((y) / 100f));
+        //result[1] = new Vector2((float)Math.Round((x +33) / 100f, 3), (float)Math.Round((y) / 100f));
+        //result[2] = new Vector2((float)Math.Round((x) / 100f, 3), (float)Math.Round((y -33) / 100f));
+        //result[3] = new Vector2((float)Math.Round((x) / 100f, 3), (float)Math.Round((y +33) / 100f));
+        //result[4] = new Vector2((float)Math.Round((x - 33) / 100f, 3), (float)Math.Round((y - 33) / 100f));
+        //result[5] = new Vector2((float)Math.Round((x - 33) / 100f, 3), (float)Math.Round((y + 33) / 100f));
+        //result[6] = new Vector2((float)Math.Round((x + 33) / 100f, 3), (float)Math.Round((y-33) / 100f));
+        //result[7] = new Vector2((float)Math.Round((x + 33) / 100f, 3), (float)Math.Round((y+33) / 100f));
 
         return result;
     }
@@ -170,7 +170,14 @@ public partial class MonsterController : MonoBehaviour
         while(true)
         {
             _moveFlag = !_moveFlag;
-            yield return _attackDelay[UnityEngine.Random.Range((int)0, (int)10)];
+            if (!_monsterModel._isBoos)
+                yield return _attackDelay[UnityEngine.Random.Range((int)0, (int)10)];
+            else
+            {
+                _moveFlag = true;
+                break;
+            }
+                
         }
     }
     private IEnumerator DoAttack()
@@ -249,17 +256,17 @@ public partial class MonsterController : MonoBehaviour
         }
         return null;
     }
-    //private void OnDrawGizmos()
-    //{
-    //    // 기즈모의 색상을 노란색으로 설정합니다.
-    //    Gizmos.color = Color.yellow;
+    private void OnDrawGizmos()
+    {
+        // 기즈모의 색상을 노란색으로 설정합니다.
+        Gizmos.color = Color.yellow;
 
 
-    //    if (_hit.collider != null)
-    //    {
-    //        Gizmos.DrawCube(_hit.point, new Vector2(0.1f, 0.1f));
-    //    }
-    //}
+        if (_hit.collider != null)
+        {
+            Gizmos.DrawCube(_hit.point, new Vector2(0.1f, 0.1f));
+        }
+    }
     private float CreateH(Vector2 cur,Vector2 target)
     {
         return Vector2.Distance(cur, target);  

@@ -29,6 +29,8 @@ public class MonsterView : MonoBehaviour
         _ani.SetInteger("Status", (int)status);
         if(status == MonsterState.Die)
         {
+            gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            gameObject.GetComponent<SpriteRenderer>().sortingOrder = 2;
             _coll.enabled = false;
         }
     }

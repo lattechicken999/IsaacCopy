@@ -93,9 +93,15 @@ public class RoomManager : Singleton<RoomManager>
             case RoomState.Cleared:
                 _curRoomControll.ClearChallenge(); break;
             case RoomState.Ready:
-                _curRoomControll.StartChallenge(); break;
+                if (_curNode.BossRoom)
+                    _curRoomControll.StartChallenge(true);
+                else
+                    _curRoomControll.StartChallenge(); break;
             default:
-                _curRoomControll.StartChallenge(); break;
+                if(_curNode.BossRoom)
+                    _curRoomControll.StartChallenge(true);
+                else
+                    _curRoomControll.StartChallenge(); break;
         }
     }
     

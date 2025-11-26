@@ -49,6 +49,27 @@ public class RoomControll : MonoBehaviour
         _isChallenging = true;
         RoomManager.Instance.StartChallenge();
     }
+    public void StartChallenge(bool isBoss)
+    {
+        if (_monsterSpawnPoint == null) return;
+        for (int i = 0; i < _monsterSpawnPoint.Length; i++)
+        {
+            if (_monsterInstances[i] == null)
+            {
+                _monsterInstances[i] = Instantiate(_monsterPrefeb, _monsterSpawnPoint[i]);
+                _monsterInstances[i].GetComponent<MonsterModel>().SetBoss();
+                _monsterInstances[i].transform.localScale = new Vector3(2.5f, 2.5f, 2.5f);
+            }
+            else
+            {
+                _monsterInstances[i]?.SetActive(true);
+                _monsterInstances[i]?.GetComponent<MonsterModel>().SetBoss();
+                _monsterInstances[i].transform.localScale = new Vector3(2.5f, 2.5f, 2.5f);
+            }
+        }
+        _isChallenging = true;
+        RoomManager.Instance.StartChallenge();
+    }
     public void StopChallenge()
     {
         if (_monsterSpawnPoint == null) return;

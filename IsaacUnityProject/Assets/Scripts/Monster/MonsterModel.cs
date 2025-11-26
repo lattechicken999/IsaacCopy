@@ -5,15 +5,15 @@ public class MonsterModel : MonoBehaviour
     private float _speed;
     private float _hp;
     private float _att;
-    public bool _isBoos;
+    public bool _isBoos = false;
 
-    private void Start()
+    private void Awake()
     {
         _speed = _monsterSo.speed;
         _hp = _monsterSo.hp;
         _att = _monsterSo.att;
-        _isBoos = false;
     }
+
     public float Speed 
     { 
         get { return _speed; } 
@@ -29,13 +29,13 @@ public class MonsterModel : MonoBehaviour
     public void SetBoss()
     {
         _isBoos = true;
-        _hp = _monsterSo.hp * 10;
+        _hp = _monsterSo.hp * 20;
         _att = _monsterSo.att * 1.8f;
         _speed = _monsterSo.speed * 0.8f;
     }
     public void TakeDamage(float damage)
     {
-        _hp -= damage;
+        _hp -= damage*0.5f;
         if (_hp < 0) _hp = 0;
     }
     public void HealHp(float heal)
