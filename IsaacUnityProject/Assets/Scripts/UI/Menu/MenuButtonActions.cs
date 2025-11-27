@@ -19,12 +19,12 @@ public class MenuButtonActions : MonoBehaviour
     }
     public void GameStart()
     {
-        _audioSource.Play();
+        //_audioSource.Play();
         GameManager.Instance.UpdateGameState(GameState.Playing);
     }
     public void GameExit()
     {
-        _audioSource.Play();
+        //_audioSource.Play();
         Application.Quit();
     }
 }

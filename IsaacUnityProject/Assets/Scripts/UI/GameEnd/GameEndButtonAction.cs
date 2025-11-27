@@ -19,7 +19,7 @@ public class GameEndButtonAction : MonoBehaviour
     }
     public void GameEnd()
     {
-        _audioSource.Play();
+        //_audioSource.Play();
         GameManager.Instance.UpdateGameState(GameState.Menu);
     }
 }

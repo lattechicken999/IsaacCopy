@@ -1,8 +1,6 @@
 ﻿using Cinemachine;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Assertions.Must;
+using UnityEngine.InputSystem;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -14,7 +12,21 @@ public class GameManager : Singleton<GameManager>
     private float _targetLenzValue = 2.1f;
     private CinemachineVirtualCamera _vCam;
     private float zoomVelocity = 0f;
+    private InputAction _EscAction;
 
+    protected override void init()
+    {
+        _EscAction = InputSystem.actions["Esc"];
+    }
+
+    private void OnEnable()
+    {
+        _EscAction.performed += ctx => UpdateGameState(GameState.Menu);
+    }
+    private void OnDisable()
+    {
+        _EscAction.performed -= ctx => UpdateGameState(GameState.Menu);
+    }
     private void Start()
     {
         UpdateGameState(GameState.Menu);
