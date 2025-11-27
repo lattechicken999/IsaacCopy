@@ -9,8 +9,9 @@ public struct sStatus
     public float _range;
     public float _shotSpeed;
     public float _speed;
-    public float _heart;
-    public float _soulHeart;
+    public int _heart;
+    public int _initHeart;
+    public int _soulHeart;
 
 }
 [RequireComponent(typeof(PlayerView))]
@@ -32,6 +33,7 @@ public class PlayerModel : MonoBehaviour
         _status._shotSpeed = _playerSO.ShotSpeed;
         _status._speed = _playerSO.Speed;
         _status._heart = _playerSO.Heart;
+        _status._initHeart = _playerSO.Heart;
         _status._soulHeart = _playerSO.SoulHeart;
 
         _subscribers = new List<IStatus>();
@@ -39,9 +41,11 @@ public class PlayerModel : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        _status._heart -= damage;
-        if(_status._heart <=0)
+        _status._heart -= (int)damage;
+        NotifyStatusAllScirpber();
+        if (_status._heart <=0)
         {
+            _status._heart = 0;
             //게임 끝
         }
     }
@@ -55,6 +59,13 @@ public class PlayerModel : MonoBehaviour
     public void UnregistSubscriber(IStatus sub)
     {
         if (_subscribers.Contains(sub)) _subscribers.Remove(sub);
+    }
+    public void NotifyStatusAllScirpber()
+    {
+        foreach(var sub in _subscribers)
+        {
+            sub.NotifyStatus(_status);
+        }
     }
     public void SetPlayerMoveValue(Vector2 m)
     {

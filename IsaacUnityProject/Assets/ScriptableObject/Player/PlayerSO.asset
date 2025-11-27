@@ -17,6 +17,5 @@ MonoBehaviour:
   Range: 20
   ShotSpeed: 0.8
   Speed: 1.4
-  Heart: 3
+  Heart: 6
   SoulHeart: 0
-  TearsPrefeb: {fileID: 2604179239433607639, guid: 13d82bcdc8bea48478a228fa6a64d620, type: 3}
