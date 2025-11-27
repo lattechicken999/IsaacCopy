@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public partial class MonsterController : MonoBehaviour
 {
-
+    private AudioSource _audioSource;
     public void TakenDamage(float damage)
     {
         _monsterModel.TakeDamage(damage);
@@ -13,6 +14,11 @@ public partial class MonsterController : MonoBehaviour
         {
             _state = MonsterState.Die;
             _monsterView.SetStatus(_state);
+            _audioSource.Play();
+            if (_monsterModel._isBoos)
+            {
+                GameManager.Instance.UpdateGameState(GameState.GameSuccess);
+            }
         }
            
     }

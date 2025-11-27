@@ -102,6 +102,10 @@ public partial class MonsterController : MonoBehaviour
     private Coroutine _attackCoroutine;
 
     //private SearchNode _debugNode;
+    private void Awake()
+    {
+        _audioSource = GetComponent<AudioSource>();
+    }
     private void Start()
     {
         _searchDelay = new WaitForSeconds(_searchCooltime);
@@ -112,6 +116,7 @@ public partial class MonsterController : MonoBehaviour
         }
         _rb = GetComponent<Rigidbody2D>();
         _state = MonsterState.Battle;
+        _audioSource.clip = SoundManager.Instance.GetSoundClip(SoundEnum.BugDie);
     }
 
     private void OnEnable()

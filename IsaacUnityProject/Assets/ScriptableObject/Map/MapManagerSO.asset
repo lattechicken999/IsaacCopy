@@ -25,3 +25,4 @@ MonoBehaviour:
   - {fileID: 3942318116728476260, guid: 85ac9c11518b7994882475430742f027, type: 3}
   BossRoom:
   - {fileID: 4171966894280038558, guid: 9d151d9f3fece0e4aa8b5364b8788ccd, type: 3}
+  MapSize: 15

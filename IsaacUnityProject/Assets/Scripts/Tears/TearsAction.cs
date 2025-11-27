@@ -5,12 +5,14 @@ using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent (typeof(AudioSource))]
 public class TearsAction : MonoBehaviour
 {
     private Animator _ani;
     private Rigidbody2D _rig;
     private TearsSpawner _parent;
     private Rigidbody2D _parentRigidbody;
+    private AudioSource _audioSource;
     private float _range;
     private float _shotSpeed;
     private WaitForSeconds _destoryDelay;
@@ -24,6 +26,11 @@ public class TearsAction : MonoBehaviour
         _rig= GetComponent<Rigidbody2D>();
         //눈물 터지는 애니메이션은 0.6초임
         _destoryDelay = new WaitForSeconds(0.3f);
+        _audioSource = GetComponent<AudioSource>();
+    }
+    private void Start()
+    {
+        _audioSource.clip = SoundManager.Instance.GetSoundClip(SoundEnum.Tears);
     }
     private void OnEnable()
     {
@@ -38,6 +45,8 @@ public class TearsAction : MonoBehaviour
 
         _rig.velocity = transform.TransformDirection(Vector2.up * _shotSpeed *7);
         _rig.velocity += _parentRigidbody.velocity / 3;
+        _isDestroying = false ;
+        _audioSource.Stop();
     }
 
     private void FixedUpdate()
@@ -68,6 +77,8 @@ public class TearsAction : MonoBehaviour
     private void CommandDestroyTear()
     {
         _ani.SetBool("Destroy", true);
+        if(!_isDestroying)
+            _audioSource.Play();
         _isDestroying = true;
         StartCoroutine(DestroyTears());
     }

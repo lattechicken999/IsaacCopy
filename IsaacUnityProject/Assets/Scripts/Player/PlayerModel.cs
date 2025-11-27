@@ -21,7 +21,7 @@ public class PlayerModel : MonoBehaviour
     [SerializeField] TearsSpawner _ts;
     private PlayerView _pv;
     private sStatus _status;
-
+    private PlayerState _playerState;
     List<IStatus> _subscribers;
     private void Awake()
     {
@@ -36,7 +36,9 @@ public class PlayerModel : MonoBehaviour
         _status._initHeart = _playerSO.Heart;
         _status._soulHeart = _playerSO.SoulHeart;
 
+        _playerState = PlayerState.Narmal;
         _subscribers = new List<IStatus>();
+
     }
 
     public void TakeDamage(float damage)
@@ -46,7 +48,10 @@ public class PlayerModel : MonoBehaviour
         if (_status._heart <=0)
         {
             _status._heart = 0;
+            _pv.GameFail();
+            _playerState = PlayerState.Die;
             //게임 끝
+            GameManager.Instance.UpdateGameState(GameState.GameFail);
         }
     }
     public void RegistSubscripber(IStatus sub)
@@ -69,10 +74,12 @@ public class PlayerModel : MonoBehaviour
     }
     public void SetPlayerMoveValue(Vector2 m)
     {
+        if (_playerState == PlayerState.Die) return;
         _pv.MoveCommand(m, _status._speed);
     }
     public void SetPlayerAttackValue(Vector2 att)
     {
+        if (_playerState == PlayerState.Die) return;
         _pv.AttackCommand(att);
         _ts.SetAttackTrigger(att);
     }

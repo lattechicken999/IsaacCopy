@@ -66,9 +66,9 @@ public class HeartUIViewer : MonoBehaviour,IStatus
             else break;
         }
     }
-    private void OnDestroy()
+    private void OnDisable()
     {
-        _pm.UnregistSubscriber(this);
+        _pm?.UnregistSubscriber(this);
     }
     public void NotifyStatus(sStatus stats)
     {

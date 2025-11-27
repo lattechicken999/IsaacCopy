@@ -79,4 +79,9 @@ public class PlayerView : MonoBehaviour
     {
         _camConfiner.m_BoundingShape2D = bounder;
     }
+    public void GameFail()
+    {
+        _anim.SetInteger("State", 1);
+        
+    }
 }

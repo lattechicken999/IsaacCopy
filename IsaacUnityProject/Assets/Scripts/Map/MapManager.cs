@@ -12,12 +12,12 @@ public class MapManager :Singleton<MapManager>
 
     private void Start()
     {
-        CreateMap(_prefebs);
+        //CreateMap(_prefebs);
     }
-    private void CreateMap(MapManagerSO prefeb)
+    public void CreateMap()
     {
-        MapCreate mc = new MapCreate(prefeb);
-        _rooms = mc.CreateMap(10);
+        MapCreate mc = new MapCreate(_prefebs);
+        _rooms = mc.CreateMap(_prefebs.MapSize);
         foreach(var r in _rooms)
         {
             r.Instantiate();
@@ -42,29 +42,40 @@ public class MapManager :Singleton<MapManager>
         DoorDirection revDir = (DoorDirection)(((int)DoorDirection._End - 1) - (int)dir);
         _currentPRS.Teleport(revDir);
     }
-    private void ActiveAround()
+    public void ResetRoon()
     {
-        foreach(var node in _currentRoom._doors)
+        if(_rooms == null) return;
+        foreach(var r in _rooms)
         {
-            if (node == null) continue;
-            if(!node.RoomInstance.activeSelf)
-            {
-                node.RoomInstance.SetActive(true);
-            }
+            Destroy(r.RoomInstance);
         }
+        _rooms = new List<RoomNode>();
     }
-    private void DeactiveAround(RoomNode node)
-    {
-        foreach (var n in node._doors)
-        {
-            if (_currentRoom == n) continue;
-            if (node == null) continue;
-            if (n.RoomInstance.activeSelf)
-            {
-                n.RoomInstance.SetActive(false);
-            }
-        }
-    }
+
+    //player 생성 시점 때문에 버그발생함
+    //private void ActiveAround()
+    //{
+    //    foreach(var node in _currentRoom._doors)
+    //    {
+    //        if (node == null) continue;
+    //        if(!node.RoomInstance.activeSelf)
+    //        {
+    //            node.RoomInstance.SetActive(true);
+    //        }
+    //    }
+    //}
+    //private void DeactiveAround(RoomNode node)
+    //{
+    //    foreach (var n in node._doors)
+    //    {
+    //        if (_currentRoom == n) continue;
+    //        if (node == null) continue;
+    //        if (n.RoomInstance.activeSelf)
+    //        {
+    //            n.RoomInstance.SetActive(false);
+    //        }
+    //    }
+    //}
 
 
 }
